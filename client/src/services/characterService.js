@@ -1,38 +1,49 @@
-import { customAxiosWithAuth } from './api'
+import { customAxios, customAxiosWithAuth } from './api'
 
-export async function deleteCommentFromPost(commentId, postId) {
-    const axios = customAxiosWithAuth()
+export async function getAllCharacters() {
+    const axios = customAxios()
     try {
-        await axios.delete(`/comments/p/${postId}/c/${commentId}`)
+        const response = await axios.get('/characters')
+        return response.data
     } catch(err) {
         console.log(err.message)
+        return []
     }
 }
 
-export async function createCommentForPost(comment, postId) {
-    const axios = customAxiosWithAuth()
+export async function getCharacter(id) {
+    const axios = customAxios()
     try {
-        const response = await axios.post(`/comments/p/${postId}`, comment)
+        const response = await axios.get(`/characters/${id}`)
         return response.data
     } catch(err) {
         console.log(err.message)
     }
 }
 
-export async function getCommentFromPost(commentId, postId) {
+export async function deletecharacter(id) {
     const axios = customAxiosWithAuth()
     try {
-        const response = await axios.get(`/comments/p/${postId}/c/${commentId}`)
+        await axios.delete(`/characters/${id}`)
+    } catch(err) {
+        console.log(err.message)
+    }
+}
+
+export async function createCharacter(character) {
+    const axios = customAxiosWithAuth()
+    try {
+        const response = await axios.character('/characters', character)
         return response.data
     } catch(err) {
         console.log(err.message)
     }
 }
 
-export async function updateCommentOfIdFromPost(comment, commentId, postId) {
+export async function updateCharacter(id, character) {
     const axios = customAxiosWithAuth()
     try {
-        await axios.put(`/comments/p/${postId}/c/${commentId}`, comment)
+        await axios.put(`/characters/${id}`, character)
     } catch(err) {
         console.log(err.message)
     }

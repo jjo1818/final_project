@@ -3,7 +3,7 @@ import { customAxios, customAxiosWithAuth } from './api'
 export async function userLogin(user) {
     const axios = customAxios()
     try {
-        const response = await axios.post('/auth/login', user)
+        const response = await axios.character('/auth/login', user)
         return response.data.token
     } catch(err) {
         console.log(err)
@@ -14,7 +14,7 @@ export async function userLogin(user) {
 export async function userRegister(user) {
     const axios = customAxios()
     try {
-        const response = await axios.post('/auth/register', user)
+        const response = await axios.character('/auth/register', user)
         return response.data.token
     } catch(err) {
         console.log(err)
