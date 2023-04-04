@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { getPost, updatePost } from '../../services/postService'
+import { getCharacter, updateCharacter } from '../../services/postService'
 
 function Edit() {
 
-    const [post, setPost] = useState({})
+    const [character, setCharacter] = useState({})
 
     const navigate = useNavigate()
     const params = useParams()
@@ -13,17 +13,17 @@ function Edit() {
     const subjectRef = useRef()
 
     useEffect(() => {
-        getPost(params.id).then(data => setPost(data))
+        getCharacter(params.id).then(data => setCharacter(data))
     }, [params.id])
 
     async function handleSubmit(e) {
         e.preventDefault()
-        let updatedPost = {
+        let updatedCharacter = {
             subject: subjectRef.current.value,
             body: bodyRef.current.value
         }
-        await updatePost(post._id, updatedPost)
-        navigate(`/posts/${post._id}`)
+        await updateCharacter(character._id, updatedCharacter)
+        navigate(`/chracters/${character._id}`)
     }
 
     return ( 
@@ -32,14 +32,14 @@ function Edit() {
             <div className='buttons' style={{ flexDirection: 'column' }}>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="nme">Subject:</label><br />
-                    <input type="text" id="nme" ref={subjectRef} defaultValue={post.subject} /><br /><br />
+                    <input type="text" id="nme" ref={subjectRef} defaultValue={character.subject} /><br /><br />
 
                     <label htmlFor="clr">Body:</label><br />
-                    <textarea ref={bodyRef} id="clr" cols="30" rows="10" defaultValue={post.body} /><br /><br />
+                    <textarea ref={bodyRef} id="clr" cols="30" rows="10" defaultValue={character.body} /><br /><br />
 
                     <button>Submit</button>
                 </form>
-                <Link to={`/posts/${post._id}`}>
+                <Link to={`/characters/${character._id}`}>
                     <button>Back</button>
                 </Link>
                 
