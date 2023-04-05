@@ -51,6 +51,8 @@ function Show({ user }) {
 
     return (
         <div>
+                        <img className="logo" src="marvel logo.png" alt="logo"/>
+
             <div className="a-post">
                 <h2>{character.name}</h2>
                 <img src={character.image} alt="" />

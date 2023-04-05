@@ -24,6 +24,10 @@ function Navbar({ user, setUser }) {
           <li className="posts-nav">
             <Link to="/characters">Characters</Link>
           </li>
+          <div>
+            <img className="logo" src="marvel logo.png" alt="logo"/>
+        
+            </div>
           <li>
             <Link to="/login">Login</Link>
           </li>
