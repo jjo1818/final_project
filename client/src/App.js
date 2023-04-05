@@ -5,15 +5,16 @@ import { userInfo } from './services/userService';
 
 import './index.css';
 
-import EditPost from './pages/posts/Edit';
-import IndexPost from './pages/posts/Index';
-import NewPost from './pages/posts/New';
-import ShowPost from './pages/posts/Show';
+import EditCharacter from './pages/characters/Edit';
+import IndexCharacter from './pages/characters/Index';
+import NewCharacter from './pages/characters/New';
+import ShowCharacter from './pages/characters/Show';
 
 import Register from './pages/users/Register';
 import Login from './pages/users/Login';
 
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -44,13 +45,13 @@ function App() {
     <div className="App">
       <Navbar user={loggedIn} setUser={setUser} />
       <Routes>
-          <Route path='/posts' element={<IndexPost user={loggedIn} />} />
-          <Route path='/posts/:id' element={<ShowPost user={loggedIn} />} />
+          <Route path='/characters' element={<IndexCharacter user={loggedIn} />} />
+          <Route path='/characters/:id' element={<ShowCharacter user={loggedIn} />} />
           {loggedIn ?
             <>
-              <Route path='/posts/new' element={<NewPost user={loggedIn} />} />
-              <Route path='/posts/:id/edit' element={<EditPost />} />
-              {!isLoading && <Route path='*' element={<Navigate to='/posts' />} />}
+              <Route path='/characters/new' element={<NewCharacter user={loggedIn} />} />
+              <Route path='/characters/:id/edit' element={<EditCharacter />} />
+              {!isLoading && <Route path='*' element={<Navigate to='/characters' />} />}
             </>
             :
             <>
@@ -60,6 +61,7 @@ function App() {
             </>
           }
       </Routes>
+      <Footer/>
     </div>
   );
 }

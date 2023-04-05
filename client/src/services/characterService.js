@@ -21,7 +21,7 @@ export async function getCharacter(id) {
     }
 }
 
-export async function deletecharacter(id) {
+export async function deleteCharacter(id) {
     const axios = customAxiosWithAuth()
     try {
         await axios.delete(`/characters/${id}`)
@@ -33,7 +33,7 @@ export async function deletecharacter(id) {
 export async function createCharacter(character) {
     const axios = customAxiosWithAuth()
     try {
-        const response = await axios.character('/characters', character)
+        const response = await axios.post('/characters', character)
         return response.data
     } catch(err) {
         console.log(err.message)

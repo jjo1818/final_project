@@ -1,4 +1,3 @@
-import axios from 'axios'
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -35,7 +34,7 @@ function Login({ setUser }) {
         const user = await userInfo()
         setUser(user)
 
-        navigate('/posts')
+        navigate('/characters')
     }
 
     return ( 

@@ -1,25 +1,25 @@
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 // import { createCommentForPost, deleteCommentFromPost } from "../../services/commentService"
 import { deleteCharacter, getCharacter } from "../../services/characterService"
 
 function Show({ user }) {
 
-    const [post, setPost] = useState({})
+    const [character, setCharacter] = useState({})
 
     const navigate = useNavigate()
     const params = useParams()
-    const bodyRef = useRef()
-    const detailsRef = useRef()
+    // const bodyRef = useRef()
+    // const detailsRef = useRef()
 
     useEffect(() => {
         async function loadData() {
             const data = await getCharacter(params.id)
-            if (!data) navigate('/posts')
-            setPost(data)
+            if (!data) navigate('/characters')
+            setCharacter(data)
         }
         loadData()
-    }, [params.id])
+    }, )
 
     // async function handleDeleteComment(comment) {
     //     await deleteCommentFromPost(comment._id, post._id)
@@ -28,8 +28,8 @@ function Show({ user }) {
     //     setPost(updatedPost)
     // }
 
-    async function handleDeletePost() {
-        await characterPost(post._id)
+    async function handleDeleteCharacter() {
+        await deleteCharacter(character._id)
         navigate('/characters')
     }
 
@@ -50,57 +50,24 @@ function Show({ user }) {
     // }
 
     return (
-            <div>
-                <div className="a-post">
-                    <h2>{character.subject}</h2>
-                    <h5 style={{ opacity: '.3'}}>Posted by {character.user} on {new Date(character.createdAt).toLocaleDateString()} at {new Date(character.createdAt).toLocaleTimeString()}</h5>
-                    <div className='p-body'>{character.body}</div><br /><br />
+        <div>
+            <div className="a-post">
+                <h2>{character.name}</h2>
+                <img src={character.image} alt="" />
+                <p>{character.biography}</p>
+                <div className="buttons">
+                    <button onClick={handleDeleteCharacter}>Delete</button>
+                    <Link to={`/characters/${character._id}/edit`}>
+                        <button>Edit</button>
+                    </Link>
+                    <Link to='/characters'>
+                        <button>Back</button>
+                    </Link>
 
-                    {
-                        post.comments?.length ?
-                        <>
-                            <div>Comments:</div>
-                            <div>{post.comments.map((comment, i) => 
-                                <div key={i} className="comm">
-                                    <div>{comment.user}</div>
-                                    <div>{comment.body}</div>
-                                    {comment.user === user &&
-                                        <>
-                                            <button onClick={() => handleDeleteComment(comment)}>X</button>
-                                            <Link to={`/posts/${post._id}/comments/${comment._id}`}><span>+</span></Link>
-                                        </>
-                                    }
-                                </div>
-                            )}</div>
-                            <br/><br/>
-                        </>
-                        : ''
-                    }
-                    {user && 
-                        <details ref={detailsRef}>
-                            <summary style={{ opacity: '.5' }}>Leave a comment:</summary>
-                            <form onSubmit={handleSubmit}>
-                                <textarea ref={bodyRef} id="lc" cols="1" rows="1" />
-                                <button>Comment</button>
-                            </form>
-                        </details>
-                    }
-                    
-                    <div className="buttons">
-                        {post.user === user &&
-                            <>
-                                <button onClick={handleDeletePost}>Delete</button>
-                                <Link to={`/characters/${character._id}/edit`}>
-                                    <button>Edit</button>
-                                </Link>
-                            </>
-                        }
-                        <Link to='/characters'>
-                            <button>Back</button>
-                        </Link>
-                    </div>
+
                 </div>
             </div>
+        </div>
     )
 }
 

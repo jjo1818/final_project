@@ -3,6 +3,7 @@ const User = require('../models/userModel')
 async function show(req, res) {
     try {
         const foundUser = await User.findById(req.id)
+        console.log(foundUser)
         res.json(foundUser)
 
     } catch (error) {

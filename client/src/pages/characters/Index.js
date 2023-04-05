@@ -22,6 +22,7 @@ function Index({ user }) {
                         {characters?.map((character, index) => 
                             <Link to={`/characters/${character._id}`} key={index}>
                                 <div className="a-character">
+                                    <img src={character.image} alt=""/>
                                     {character.subject}
                                 </div>
                             </Link>
