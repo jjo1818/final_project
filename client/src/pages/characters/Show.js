@@ -52,9 +52,9 @@ function Show({ user }) {
     return (
             <div>
                 <div className="a-post">
-                    <h2>{post.subject}</h2>
+                    <h2>{character.subject}</h2>
                     <h5 style={{ opacity: '.3'}}>Posted by {character.user} on {new Date(character.createdAt).toLocaleDateString()} at {new Date(character.createdAt).toLocaleTimeString()}</h5>
-                    <div className='p-body'>{post.body}</div><br /><br />
+                    <div className='p-body'>{character.body}</div><br /><br />
 
                     {
                         post.comments?.length ?
