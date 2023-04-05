@@ -31,11 +31,11 @@ function Edit() {
             <h1>Edit Character</h1>
             <div className='buttons' style={{ flexDirection: 'column' }}>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="nme">Subject:</label><br />
+                    <label htmlFor="nme">Character:</label><br />
                     <input type="text" id="nme" ref={subjectRef} defaultValue={character.subject} /><br /><br />
 
-                    <label htmlFor="clr">Body:</label><br />
-                    <textarea ref={bodyRef} id="clr" cols="30" rows="10" defaultValue={character.body} /><br /><br />
+                    {/* <label htmlFor="clr">Body:</label><br />
+                    <textarea ref={bodyRef} id="clr" cols="30" rows="10" defaultValue={character.body} /><br /><br /> */}
 
                     <button>Submit</button>
                 </form>

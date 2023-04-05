@@ -12,7 +12,7 @@ I first had an idea to start with an app to mirror my previous Marvel app.
 https://trello.com/b/76Wk5ziC/marvel-crud
 Links to the project's planning (Trello board) and the deployed app.
 # Unsolved Problems:
-I was not able to utilize  the way that I expected 
+I was not able to utilize boostrap the way that I expected and adding the favorites feature was one of my challenges 
 List any unsolved issues.
 
 # Future Enhancements:

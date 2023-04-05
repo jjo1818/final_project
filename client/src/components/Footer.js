@@ -5,9 +5,10 @@ export default function Footer() {
       <footer className="Footer">
         
         <ul>
-        <img className="logo" src="marvel logo 2.png" alt="logo"/>
-
-          <li>Help</li>
+        <div>
+        <img className="logo2" src="/marvellogo2.png" alt="logo"/>
+        </div>
+          <li>©2023 MARVEL</li>
         </ul>
       </footer>
       

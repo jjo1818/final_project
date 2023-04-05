@@ -51,13 +51,13 @@ function Show({ user }) {
 
     return (
         <div>
-                        <img className="logo" src="marvel logo.png" alt="logo"/>
-
+            
             <div className="a-post">
                 <h2>{character.name}</h2>
                 <img src={character.image} alt="" />
                 <p>{character.biography}</p>
                 <div className="buttons">
+                    
                     <button onClick={handleDeleteCharacter}>Delete</button>
                     <Link to={`/characters/${character._id}/edit`}>
                         <button>Edit</button>

@@ -21,18 +21,25 @@ function Navbar({ user, setUser }) {
         </>
        : 
         <>
-          <li className="posts-nav">
+          <li className="top-nav">
+            
             <Link to="/characters">Characters</Link>
-          </li>
-          <div>
-            <img className="logo" src="marvel logo.png" alt="logo"/>
+            <div>
+            <img className="logo" src="/marvellogo.png" alt="logo"/>
         
             </div>
-          <li>
             <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
+          </li>
+          {/* <div>
+            <img className="logo" src="/marvellogo.png" alt="logo"/>
+        
+            </div> */}
+          <li>
+            {/* <Link to="/login">Login</Link> */}
           </li>
           <li>
-            <Link to="/register">Register</Link>
+            {/* <Link to="/register">Register</Link> */}
           </li>
         </>
       }

@@ -23,11 +23,11 @@ function New({ user }) {
         <div>
             <h1>New Character</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="nme">Subject:</label><br />
+                <label htmlFor="nme">Character:</label><br />
                 <input type="text" id="nme" ref={subjectRef} /><br /><br />
 
-                <label htmlFor="clr">Body:</label><br />
-                <textarea id="clr" cols="30" rows="10" ref={bodyRef} /><br /><br />
+                {/* <label htmlFor="clr">Body:</label><br />
+                <textarea id="clr" cols="30" rows="10" ref={bodyRef} /><br /><br /> */}
 
                 <button>Submit</button>
             </form>
