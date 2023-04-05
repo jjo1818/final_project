@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { createPost } from "../../services/characterService";
+import { createCharacter } from "../../services/characterService";
 
 function New({ user }) {
 
@@ -10,18 +10,18 @@ function New({ user }) {
 
     async function handleSubmit(e) {
         e.preventDefault()
-        let post = {
+        let character = {
             subject: subjectRef.current.value,
             body: bodyRef.current.value,
             user
         }
-        await createPost(post)
-        navigate('/posts')
+        await createCharacter(character)
+        navigate('/characters')
     }
 
     return ( 
         <div>
-            <h1>New Post</h1>
+            <h1>New Character</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="nme">Subject:</label><br />
                 <input type="text" id="nme" ref={subjectRef} /><br /><br />
