@@ -25,13 +25,22 @@ export async function userRegister(user) {
 export async function userInfo() {
     const axios = customAxiosWithAuth()
     try {
-        const response = await axios.get('/users')
+        const response = await axios.get(`/users`)
         return response.data
     } catch(err) {
         console.log(err)
         localStorage.removeItem("token")
         alert(err.response?.data?.error)
         return {}
+    }
+}
+
+export async function updateUser(id, user) {
+    const axios = customAxiosWithAuth()
+    try {
+        await axios.put(`/users/${id}`, user)
+    } catch(err) {
+        console.log(err.message)
     }
 }
 

@@ -2,14 +2,17 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 // import { createCommentForPost, deleteCommentFromPost } from "../../services/commentService"
 import { deleteCharacter, getCharacter } from "../../services/characterService"
+import { updateUser } from "../../services/userService"
 
 function Show({ user }) {
-
+    console.log(user)
     const [character, setCharacter] = useState({})
+    const [newUser, setNewUser] = useState({user})
+
 
     const navigate = useNavigate()
     const params = useParams()
-    // const bodyRef = useRef()
+    // const favoriteCharacterRef = useRef()
     // const detailsRef = useRef()
 
     useEffect(() => {
@@ -21,12 +24,15 @@ function Show({ user }) {
         loadData()
     }, )
 
-    // async function handleDeleteComment(comment) {
-    //     await deleteCommentFromPost(comment._id, post._id)
-    //     let updatedPost = { ...post }
-    //     updatedPost.comments = updatedPost.comments.filter(c => c._id !== comment._id)
-    //     setPost(updatedPost)
-    // }
+    async function handleSubmitUser(e) {
+        e.preventDefault()
+        let updatedUser = {
+            favoriteCharacter: character._id
+        }
+        await updateUser(newUser._id, updatedUser)
+        navigate(`/users/${newUser._id}`)
+
+    }
 
     async function handleDeleteCharacter() {
         await deleteCharacter(character._id)
@@ -65,6 +71,7 @@ function Show({ user }) {
                     <Link to='/characters'>
                         <button>Back</button>
                     </Link>
+                    <button onClick={handleSubmitUser}>Add to Favorites</button>
 
 
                 </div>

@@ -15,7 +15,7 @@ function Index({ user }) {
     }, [])
     console.log(characters)
     return (
-            <div>
+            <div className="main-container" >
                
                 <h1>Marvel Characters</h1>
                 <div id="characters">

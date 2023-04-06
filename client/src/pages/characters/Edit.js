@@ -9,8 +9,9 @@ function Edit() {
     const navigate = useNavigate()
     const params = useParams()
 
-    const bodyRef = useRef()
-    const subjectRef = useRef()
+    const nameRef = useRef()
+    const biographyRef = useRef()
+    const imageRef = useRef()
 
     useEffect(() => {
         getCharacter(params.id).then(data => setCharacter(data))
@@ -19,8 +20,9 @@ function Edit() {
     async function handleSubmit(e) {
         e.preventDefault()
         let updatedCharacter = {
-            subject: subjectRef.current.value,
-            body: bodyRef.current.value
+            name: nameRef.current.value,
+            biography: biographyRef.current.value,
+            image: imageRef.current.value,
         }
         await updateCharacter(character._id, updatedCharacter)
         navigate(`/chracters/${character._id}`)
@@ -31,8 +33,14 @@ function Edit() {
             <h1>Edit Character</h1>
             <div className='buttons' style={{ flexDirection: 'column' }}>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="nme">Character:</label><br />
-                    <input type="text" id="nme" ref={subjectRef} defaultValue={character.subject} /><br /><br />
+                    {/* <label htmlFor="nme">Character:</label><br />
+                    <input type="text" id="nme" ref={subjectRef} defaultValue={character.subject} /><br /><br /> */}
+                    <label htmlFor="nme">name:</label><br />
+                <input type="text" id="nme" ref={nameRef} defaultValue={character.subject}/><br /><br />
+                <label htmlFor="bio">biography:</label><br />
+                <input type="text" id="bio" ref={biographyRef} defaultValue={character.subject}/><br /><br />
+                <label htmlFor="img">image:</label><br />
+                <input type="text" id="img" ref={imageRef} defaultValue={character.subject}/><br /><br />
 
                     {/* <label htmlFor="clr">Body:</label><br />
                     <textarea ref={bodyRef} id="clr" cols="30" rows="10" defaultValue={character.body} /><br /><br /> */}

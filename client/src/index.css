@@ -1,12 +1,12 @@
-/* ul {
+ /* ul {
   position: relative;
   border: 1px solid black;
   list-style: none;
   padding: 20px;
 }
 li {
-  display: flex;
-}
+  display: flex; 
+} 
 form {
   display: flex;
   flex-direction: column;
@@ -14,8 +14,8 @@ form {
 }
 input {
   margin: 20px;
-}
-button {
+} */
+/* button {
   margin-top: 50px;
   width: 100px;
   padding: 10px;
@@ -45,9 +45,9 @@ button {
 textarea {
   width: 100%;
   height: 200px;
-}
+} */
 
-.a-post {
+/* .a-post {
   border-top: 1px solid black;
   padding: 20px;
   box-shadow: 5px 4px #e9e9e9;
@@ -84,14 +84,14 @@ textarea {
   align-items: center;
   text-decoration: none;
   user-select: none;
-}
+} */
 
-.n-post:hover {
+ .n-post:hover {
   border-left: 1px solid black;
   opacity: .5;
-}
+} 
 
-.n-post:active {
+/* .n-post:active {
   background-color: black;
   color: white;
   font-weight: bold;
@@ -99,14 +99,14 @@ textarea {
 
 #main-div {
   position: relative;
-}
+} 
 
-.comment {
+/* .comment {
   margin-top: 20px;
   margin-left: 50px;
   padding-left: 20px;
   border-left: 1px solid black;
-}
+} */
 
 
 
@@ -131,7 +131,7 @@ textarea {
   width: 30px;
   right: 130px;
 }
-
+*/
 .d-icon:hover {
   opacity: .5;
   border: 1px solid rgb(12, 11, 11);
@@ -145,9 +145,9 @@ textarea {
 .c-icon:hover {
   opacity: .5;
   border: 1px solid rgb(12, 11, 11);
-}
+} */
 
-.d-icon:active {
+/* .d-icon:active {
   opacity: .3;
   border: 2px solid rgb(255, 20, 20);
   color: white;
@@ -163,9 +163,9 @@ textarea {
   opacity: .3;
   border: 2px solid rgb(20, 255, 32);
   color: white;
-}
+} */
 
-#new-comment {
+/* #new-comment {
   margin-top: 20px;
   font-size: 10pt;
   padding: 0;
@@ -183,9 +183,9 @@ textarea {
 }
 #care-input div {
   padding-top: 20px;
-}
+} */
 
-.buttons {
+/* .buttons {
   display: flex;
   justify-content: space-between;
   margin: 0;
@@ -197,9 +197,9 @@ textarea {
 .buttons form {
   padding: 0;
   margin: 0;
-}
+} */
 
-.comm {
+/* .comm {
   padding-left: 40px;
   margin: 5px;
   margin-left: 20px;
@@ -222,9 +222,9 @@ textarea {
   padding: 0;
   margin: 0;
   cursor: pointer;
-}
+} */
 
-.comm button {
+/* .comm button {
   margin: 0;
   padding: 0;
   position: absolute;
@@ -242,9 +242,9 @@ textarea {
   left: 5px;
   top: 3px;
   text-decoration: none;
-}
+} */
 
-.user-auth #icon {
+/* .user-auth #icon {
     position: absolute;
     height: 40px;
     top: 5px;
@@ -268,9 +268,9 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
-ul.user-auth {
+/* ul.user-auth {
   flex-direction: row;
   justify-content: flex-end;
   border-left: none;
@@ -290,16 +290,23 @@ ul.user-auth li {
 li.posts-nav {
   position: absolute;
   left: 0;
-}
-.logo {
-  width: 100px;
-  align-items: center;
 } */
+
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  
+}
 
 .a-post {
   justify-content: center;
 }
-.Footer {
+footer { 
+  display: flex;
   justify-content: center;
   align-items: center;
 }

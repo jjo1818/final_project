@@ -11,6 +11,16 @@ async function show(req, res) {
     }
 }
 
+async function update(req, res) {
+    try {
+        const updateUser = await User.findByIdAndUpdate(req.id, req.body, {new: true} )
+        res.status(200).json(updateUser) 
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
+}
+
 module.exports = {
-    show
+    show, 
+    update
 }

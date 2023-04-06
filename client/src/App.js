@@ -9,6 +9,7 @@ import EditCharacter from './pages/characters/Edit';
 import IndexCharacter from './pages/characters/Index';
 import NewCharacter from './pages/characters/New';
 import ShowCharacter from './pages/characters/Show';
+import ShowUser from './pages/users/Show';
 
 import Register from './pages/users/Register';
 import Login from './pages/users/Login';
@@ -32,23 +33,28 @@ function App() {
       }
 
       async function getLoggedInUser() {
-          const user = await userInfo()
-          setUser(user)
+          const userData = await userInfo()
+          setUser(userData)
           setIsLoading(false)
       }
 
   }, [])
 
   let loggedIn = user.username
+  let userId = user.id
+
+  console.log(loggedIn)
 
   return (
     <div className="App">
       <Navbar user={loggedIn} setUser={setUser} />
       <Routes>
           <Route path='/characters' element={<IndexCharacter user={loggedIn} />} />
-          <Route path='/characters/:id' element={<ShowCharacter user={loggedIn} />} />
+          <Route path='/characters/:id' element={<ShowCharacter user={userId} />} />
           {loggedIn ?
             <>
+              <Route path='/users/:id' element={<ShowUser user={userId} />} />
+              {/* <Route path='/characters/:id' element={<ShowCharacter user={userId} />} /> */}
               <Route path='/characters/new' element={<NewCharacter user={loggedIn} />} />
               <Route path='/characters/:id/edit' element={<EditCharacter />} />
               {!isLoading && <Route path='*' element={<Navigate to='/characters' />} />}
