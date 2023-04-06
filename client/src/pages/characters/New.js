@@ -23,14 +23,14 @@ function New({ user }) {
     }
 
     return ( 
-        <div>
+        <div className="newbox">
             <h1>New Character</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="nme">name:</label><br />
+                <label htmlFor="nme">Name:</label><br />
                 <input type="text" id="nme" ref={nameRef} /><br /><br />
-                <label htmlFor="bio">biography:</label><br />
+                <label htmlFor="bio">Biography:</label><br />
                 <input type="text" id="bio" ref={biographyRef} /><br /><br />
-                <label htmlFor="img">image:</label><br />
+                <label htmlFor="img">Image:</label><br />
                 <input type="text" id="img" ref={imageRef} /><br /><br />
                 {/* <label htmlFor="clr">Body:</label><br />
                 <textarea id="clr" cols="30" rows="10" ref={bodyRef} /><br /><br /> */}

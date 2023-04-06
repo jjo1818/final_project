@@ -40,21 +40,7 @@ function Show({ user }) {
         navigate('/characters')
     }
 
-    // async function handleSubmit(e) {
-    //     e.preventDefault()
-
-    //     let comment = {
-    //         body: bodyRef.current.value,
-    //         user
-    //     }
-
-    //     const newComment = await createCommentForPost(comment, post._id)
-    //     let updatedPost = { ...post }
-    //     updatedPost.comments.push(newComment)
-    //     setPost(updatedPost)
-    //     bodyRef.current.value = ''
-    //     detailsRef.current.open = false
-    // }
+    
 
     return (
         

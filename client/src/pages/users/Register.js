@@ -39,7 +39,7 @@ function Register({ setUser }) {
     }
 
     return ( 
-        <div className="user-auth">
+        <div className="registerbox">
             <h1>Register</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
