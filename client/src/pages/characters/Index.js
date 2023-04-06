@@ -17,8 +17,8 @@ function Index({ user }) {
     return (
             <div className="main-container" >
                
-                <h1>Marvel Characters</h1>
-                <div id="characters">
+                <h1 className= "title">Marvel Characters</h1>
+                {/* <div id="characters"> */}
             
                         {characters?.map((character, index) => 
                             <Link to={`/characters/${character._id}`} key={index}>
@@ -35,7 +35,7 @@ function Index({ user }) {
                         </Link>
                     }
     
-                </div>
+                {/* </div> */}
             </div>
     )
 }

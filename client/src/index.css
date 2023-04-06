@@ -1,4 +1,10 @@
- /* ul {
+body{
+  margin: 0;
+  background-image: url("../public/marvel-bg.jpeg");
+}
+
+
+/* ul {
   position: relative;
   border: 1px solid black;
   list-style: none;
@@ -86,6 +92,18 @@ textarea {
   user-select: none;
 } */
 
+.characterbox {
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+
+}
+.characterbox > img{
+  width: 225px;
+}
+
+
  .n-post:hover {
   border-left: 1px solid black;
   opacity: .5;
@@ -108,6 +126,23 @@ textarea {
   border-left: 1px solid black;
 } */
 
+.user-auth {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #00BAF0;
+  background: linear-gradient(to left, #ea4011, #f88666);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 80px;
+  padding: 1em;
+  
+}
+
+.user-auth a {
+  text-decoration: none;
+  color: white;
+}
 
 
 .iconic {
@@ -145,7 +180,7 @@ textarea {
 .c-icon:hover {
   opacity: .5;
   border: 1px solid rgb(12, 11, 11);
-} */
+} 
 
 /* .d-icon:active {
   opacity: .3;
@@ -292,16 +327,36 @@ li.posts-nav {
   left: 0;
 } */
 
-
-.main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  
+ul{
+  list-style: none;
 }
 
+.main-container a{
+  text-align: center;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.title {
+  color: white;
+  text-align: center;
+}
+
+.a-character{
+  display: flex;
+  justify-content: center;
+}
+
+.a-character > img{
+  width: 200px;
+
+}
 .a-post {
   justify-content: center;
 }
@@ -309,9 +364,28 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1rem; 
+
 }
+/* #page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            
+} */
 .logo2 {
-  width: 20vh;
+  width: 15vh;
   align-items: center;
 } 
 
@@ -336,17 +410,24 @@ html, body {
   box-sizing: border-box;
 }
 
-.top-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #00BAF0;
-  background: linear-gradient(to left, #ea4011, #ec6e4b);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: #FFF;
-  height: 80px;
-  padding: 1em;
+
+
+.top-nav a{
+  color: white;
+  text-decoration: none;
+  
+}
+
+.loginbox h1{
+ color: white;
+ margin-left: 20px;
+}
+
+.loginbox > form{
+  margin-left: 20px;
+}
+label {
+  color: white;
 }
 
 .menu {
@@ -357,12 +438,13 @@ html, body {
   padding: 0;
 }
 
-.user-auth > li {
-  margin: 0 1rem;
+/* .user-auth > li {
+  margin: 0;
+  padding-left: 20;
   overflow: hidden;
-}
+} */
 
-.user-auth-button-container {
+/* .user-auth-button-container {
   display: none;
   height: 100%;
   width: 30px;
@@ -370,13 +452,13 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
-#user-auth-toggle {
+/* #user-auth-toggle {
   display: none;
-}
+} */
 
-.user-auth-button,
+/* .user-auth-button,
 .user-auth-button::before,
 .user-auth-button::after {
   display: block;
@@ -451,4 +533,4 @@ html, body {
   .user-auth > li:not(:last-child) {
     border-bottom: 1px solid #444;
   }
-}
+} */

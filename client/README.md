@@ -1,21 +1,17 @@
 # Crud Marvel app
 
 # Introduction:
-A paragraph used to introduce interested parties to the project and needs to include one or more screenshots.
+This marvel app is to create your own marvel character or display an existing character and all of their details
 
 # Technologies Used:
-I used the 
-A list of all technologies, libraries, APIs, etc. used in the project.
+I used mongoose, express, dotenv, bcrypt, cors, jsonwebtoken, bootstrap
 
 # Getting Started:
-I first had an idea to start with an app to mirror my previous Marvel app. 
+I fi had an idea to start with an app to mirror my previous Marvel app using an API
 https://trello.com/b/76Wk5ziC/marvel-crud
-Links to the project's planning (Trello board) and the deployed app.
+attempted to used render, however my upload failed.
 # Unsolved Problems:
-I was not able to utilize boostrap the way that I expected and adding the favorites feature was one of my challenges 
-List any unsolved issues.
-
+I was not able to utilize boostrap the way that I expected and adding the favorites feature was one of my challenges and also I was not able to design and css the way that i invisioned it. my favorite part was creating the search,edit,delete components.
 # Future Enhancements:
-I would like to add more features and make it more user interactive such as adding more characters and making the 
-Future Enhancements: Identify future features and enhancements planned for the project.
+I would like to add more features and make it more user interactive such as adding more characters details and clicking features.
 

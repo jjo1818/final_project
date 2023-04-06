@@ -8,7 +8,7 @@ function Navbar({ user, setUser }) {
   };
 
   return (
-    <ul className="user-auth container-fluid">
+    <ul className="user-auth">
       {user ? 
         <>
           <li style={{ color: "black" }}>Welcome {user}!</li>
@@ -23,24 +23,13 @@ function Navbar({ user, setUser }) {
         <>
           <li className="top-nav">
             
-            <Link to="/characters">Characters</Link>
-            <div>
-            <img className="logo" src="/marvellogo.png" alt="logo"/>
-        
-            </div>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+            <li>
+             <Link to="/characters">Characters</Link>
+            </li>
+             <li><Link to="/login">Login</Link></li>
+            <li><Link to="/register">Register</Link></li>
           </li>
-          {/* <div>
-            <img className="logo" src="/marvellogo.png" alt="logo"/>
-        
-            </div> */}
-          <li>
-            {/* <Link to="/login">Login</Link> */}
-          </li>
-          <li>
-            {/* <Link to="/register">Register</Link> */}
-          </li>
+          
         </>
       }
     </ul>

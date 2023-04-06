@@ -39,16 +39,21 @@ function App() {
       }
 
   }, [])
+  console.log(user)
 
   let loggedIn = user.username
-  let userId = user.id
+  let userId = user._id
+  
 
   console.log(loggedIn)
+
+  console.log(userId)
 
   return (
     <div className="App">
       <Navbar user={loggedIn} setUser={setUser} />
       <Routes>
+        
           <Route path='/characters' element={<IndexCharacter user={loggedIn} />} />
           <Route path='/characters/:id' element={<ShowCharacter user={userId} />} />
           {loggedIn ?

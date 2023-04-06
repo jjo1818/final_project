@@ -4,10 +4,11 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import { deleteCharacter, getCharacter } from "../../services/characterService"
 import { updateUser } from "../../services/userService"
 
+
 function Show({ user }) {
     console.log(user)
     const [character, setCharacter] = useState({})
-    const [newUser, setNewUser] = useState({user})
+    // const [newUser, setNewUser] = useState({user})
 
 
     const navigate = useNavigate()
@@ -29,8 +30,8 @@ function Show({ user }) {
         let updatedUser = {
             favoriteCharacter: character._id
         }
-        await updateUser(newUser._id, updatedUser)
-        navigate(`/users/${newUser._id}`)
+        await updateUser(user, updatedUser)
+        navigate(`/users/${user}`)
 
     }
 
@@ -56,9 +57,9 @@ function Show({ user }) {
     // }
 
     return (
-        <div>
+        
             
-            <div className="a-post">
+            <div className="characterbox">
                 <h2>{character.name}</h2>
                 <img src={character.image} alt="" />
                 <p>{character.biography}</p>
@@ -76,7 +77,7 @@ function Show({ user }) {
 
                 </div>
             </div>
-        </div>
+        
     )
 }
 
