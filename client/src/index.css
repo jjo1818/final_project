@@ -103,7 +103,14 @@ textarea {
   width: 225px;
 }
 
+.characterbox > h2{
+  color: white;
+}
 
+.characterbox > p{
+  color: white;
+}
+.characterbox
  .n-post:hover {
   border-left: 1px solid black;
   opacity: .5;
